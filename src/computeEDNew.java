@@ -124,7 +124,18 @@ public class computeEDNew {
 		}
 
 		System.out.println("Edit distance\n");
+		System.out.print("      ");
+		for (int i1=0; i1<str2.length(); i1++)
+			System.out.print(Character.toString(str2.charAt(i1)) + "  ");
+		
+		System.out.println();
+		
 		for (int i = 0; i <= len1; i++) {
+			if ( i == 0)
+				System.out.print("   ");
+			else
+				System.out.print(Character.toString(str1.charAt(i-1)) + "  ");
+				
 			for (int j = 0; j <= len2; j++) {
 				System.out.print(E[i][j] + "  ");
 			}
@@ -160,7 +171,7 @@ public class computeEDNew {
 		
 		sequenceList.add(seq1);
 
-		int k = len1 - 1;
+		//int k = len1 - 1;
 
 		int i = len1;
 		int j = len2;
@@ -172,7 +183,7 @@ public class computeEDNew {
 			ArrayList<String> seq = sequenceList.remove();
 			
 			//k = len1 - 1;
-			k = 0;
+			//k = 0;
 			i = len1;
 			j = len2;
 			
@@ -262,12 +273,12 @@ public class computeEDNew {
 
 					}
 					seq.add("U");
-					k++;
+					//k++;
 					i--;
 				}
 				else if (E_GLOBAL[i][j] == left) {
 					seq.add("L");
-					k++;
+					//k++;
 					j--;
 				}
 
@@ -327,12 +338,32 @@ public class computeEDNew {
 		}
 		
 		System.out.println();
+		
+		
+		
 		for (String k : s1_new) {
 			System.out.print(k + " ");
 		}
+
+		
+		System.out.println();
+		int k1 = 0;
+		
+		for (String k : s1_new) {
+			if (s1_new.get(k1).equals(s2_new.get(k1)))
+				System.out.print("  ");
+			else
+			System.out.print("| ");
+			
+			k1++;
+		}
+		
+		k1 = 0;
 		System.out.println();
 		for (String k : s2_new) {
 			System.out.print(k + " ");
+			
+			k1++;
 		}
 		System.out.println();
 		System.out.println();
