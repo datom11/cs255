@@ -21,7 +21,7 @@ Scope: This is a term project.
 		OR
 
 1. Download the JAR file EditDistance.jar & run it as follows:
-> java -jar EditDistance.jar
+> java -jar  EditDistance.jar
 
  
 
